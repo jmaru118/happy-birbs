@@ -1958,6 +1958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9788046a89a42008f6477d72d6f4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravity: 0.6
   launchMultiplier: 325
   maxPullDistX: 2
   maxPullDistY: 2

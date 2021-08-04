@@ -9,6 +9,7 @@ public class Bird : MonoBehaviour
     private bool hasLaunched;                       // used with _idleTime
     private float idleTime;                         // used to reset scene if bird sits idle for too long
 
+    [SerializeField] float gravity;                 // affects gravity on bird
     [SerializeField] float launchMultiplier = 300;  // multiplier affects launch speed
     [SerializeField] private float maxPullDistX;    // limits how far we can pull our bird in the X dir
     [SerializeField] private float maxPullDistY;    // limits how far we can pull our bird in the Y dir
@@ -64,7 +65,7 @@ public class Bird : MonoBehaviour
         Vector2 dirToFly = initPos - transform.position;
         Rigidbody2D bird_rigidbody2d = GetComponent<Rigidbody2D>();
         bird_rigidbody2d.AddForce(dirToFly * launchMultiplier);
-        bird_rigidbody2d.gravityScale = 1;
+        bird_rigidbody2d.gravityScale = gravity;
         hasLaunched = true;
         GetComponent<LineRenderer>().enabled = false;
     }
