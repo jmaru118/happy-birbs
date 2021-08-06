@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+
     private float timeElapsed;
     private bool enemyCamIsActive = true;
+    private CinemachineVirtualCamera vcam;
 
+
+    public void SetBirdToFollow(Transform birdTransform)
+    {
+        vcam = FindObjectOfType<CinemachineVirtualCamera>();
+        vcam.LookAt = birdTransform;
+        vcam.Follow = birdTransform;
+    }
 
     private void Awake()
     {
