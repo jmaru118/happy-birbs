@@ -5,13 +5,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject ghostParticle;
+    private LevelController levelController;
+
     [SerializeField] private float deathForce;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelController = FindObjectOfType<LevelController>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
         {
             // create a ghost at current location
             Instantiate(ghostParticle, transform.position, Quaternion.identity);
+            levelController.countEnemyDefeated();
             Destroy(gameObject);
         }
 
@@ -35,6 +38,7 @@ public class Enemy : MonoBehaviour
         {
             // create a ghost at current location
             Instantiate(ghostParticle, transform.position, Quaternion.identity);
+            levelController.countEnemyDefeated();
             Destroy(gameObject);
         }
     }

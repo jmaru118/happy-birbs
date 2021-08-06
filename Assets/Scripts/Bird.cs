@@ -17,7 +17,7 @@ public class Bird : MonoBehaviour
     [SerializeField] private Vector3 launchPosition;// launch position of bird
     [SerializeField] private Vector3 startPosition; // starting position of bird before it is available for launch
     [SerializeField] float gravity = 0.8f;          // affects gravity on bird
-    [SerializeField] float launchMultiplier = 300;  // multiplier affects launch speed
+    [SerializeField] float launchMultiplier;  // multiplier affects launch speed
     [SerializeField] private float maxPullDistX;    // limits how far we can pull our bird in the X dir
     [SerializeField] private float maxPullDistY;    // limits how far we can pull our bird in the Y dir
 

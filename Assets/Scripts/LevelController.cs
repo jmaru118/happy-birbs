@@ -30,6 +30,11 @@ public class LevelController : MonoBehaviour
 
     }
 
+    public void countEnemyDefeated()
+    {
+        enemiesDefeated++;
+    }
+
     private void OnEnable()
     {
         // find all enemies so we can progress to the next level
@@ -51,13 +56,6 @@ public class LevelController : MonoBehaviour
     void Update()
     {
         // check if all enemies defeated and progress to next level
-        foreach (Enemy enemy in enemies)
-        {
-            if (enemy == null)
-                enemiesDefeated++;
-
-        }
-
         if (enemiesDefeated == totalEnemies)
         {
             levelIndex++;
