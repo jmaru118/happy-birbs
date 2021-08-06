@@ -12,6 +12,7 @@ public class Bird : MonoBehaviour
     private CameraController cameraController;      // used to tell the camera to follow this bird
     private LevelController levelController;        // used for readying up the next bird
     private PolygonCollider2D collider;             // will hold our 2dcollider to enable when bird is active
+    private Animator animator;                      // help distinguish when a bird is activate
 
     [SerializeField] private Vector3 launchPosition;// launch position of bird
     [SerializeField] private Vector3 startPosition; // starting position of bird before it is available for launch
@@ -28,6 +29,7 @@ public class Bird : MonoBehaviour
         cameraController = FindObjectOfType<CameraController>();
         cameraController.SetBirdToFollow(transform);
         collider.enabled = true;
+        animator.enabled = true;
     }
 
     // Start is called before the first frame update
@@ -38,6 +40,8 @@ public class Bird : MonoBehaviour
         transform.position = startPosition;
         collider = GetComponent<PolygonCollider2D>();
         collider.enabled = false;
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
 
     }
 
@@ -57,10 +61,7 @@ public class Bird : MonoBehaviour
             }
 
             // check bounds for reset
-            if (transform.position.y > 10  ||
-                transform.position.y < -10 ||
-                transform.position.x > 15  ||
-                transform.position.x < -20 ||
+            if (transform.position.y < -10 ||
                 idleTime > 2.5 )
             {
                 levelController.ReadyUpNextBird();

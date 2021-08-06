@@ -53,7 +53,6 @@ public class LevelController : MonoBehaviour
         // check if all enemies defeated and progress to next level
         foreach (Enemy enemy in enemies)
         {
-            Debug.Log(enemies.Length);
             if (enemy == null)
                 enemiesDefeated++;
 
