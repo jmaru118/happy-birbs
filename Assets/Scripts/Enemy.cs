@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject ghostParticle;
     private LevelController levelController;
+    private UIController uiController;                             // used to update the ui counter when destroyed
 
     [SerializeField] private float deathForce;
 
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         levelController = FindObjectOfType<LevelController>();
+        uiController = FindObjectOfType<UIController>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
             // create a ghost at current location
             Instantiate(ghostParticle, transform.position, Quaternion.identity);
             levelController.countEnemyDefeated();
+            uiController.updateEnemyCount();
             Destroy(gameObject);
         }
 
@@ -39,6 +42,7 @@ public class Enemy : MonoBehaviour
             // create a ghost at current location
             Instantiate(ghostParticle, transform.position, Quaternion.identity);
             levelController.countEnemyDefeated();
+            uiController.updateEnemyCount();
             Destroy(gameObject);
         }
     }
