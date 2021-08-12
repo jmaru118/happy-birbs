@@ -401,10 +401,9 @@ GameObject:
   m_Component:
   - component: {fileID: 632377666}
   - component: {fileID: 632377665}
-  - component: {fileID: 632377668}
   - component: {fileID: 632377667}
   m_Layer: 0
-  m_Name: Happy Birbs
+  m_Name: Logo Happy Birbs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,40 +474,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &632377667
-MonoBehaviour:
+--- !u!95 &632377667
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632377664}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9509be90309af434fae3a271c19094a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0
-  growTime: 3
-  maxSize: 0.69936
-  startingSize: 0.25
-  isMaxSize: 0
---- !u!114 &632377668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632377664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9509be90309af434fae3a271c19094a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 0
-  growTime: 3
-  maxSize: 0.69936
-  startingSize: 0.25
-  isMaxSize: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 704ace06a18e045d3a5dceaa067d9d5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &686030823
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +957,7 @@ GameObject:
   - component: {fileID: 2111709755}
   - component: {fileID: 2111709754}
   - component: {fileID: 2111709753}
+  - component: {fileID: 2111709756}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1018,7 +1003,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1105,3 +1090,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111709751}
   m_CullTransparentMesh: 1
+--- !u!95 &2111709756
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111709751}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8847b24fd7f6f4991b304999606a7aa2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
