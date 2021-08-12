@@ -20,6 +20,8 @@ public class Bird : MonoBehaviour
     [SerializeField] float launchMultiplier;  // multiplier affects launch speed
     [SerializeField] private float maxPullDistX;    // limits how far we can pull our bird in the X dir
     [SerializeField] private float maxPullDistY;    // limits how far we can pull our bird in the Y dir
+    [SerializeField] private float horizontalMultiplier; // increases or decreases how far bird launches
+    [SerializeField] private float verticalMultiplier;   // increase or decreses how high bird launches
 
     public void ActivateBird()
     {
@@ -85,6 +87,7 @@ public class Bird : MonoBehaviour
         {
             // calc launch vector and launch bird
             Vector2 dirToFly = launchPosition - transform.position;
+            dirToFly = new Vector2(dirToFly.x * horizontalMultiplier, dirToFly.y * verticalMultiplier);
             Rigidbody2D bird_rigidbody2d = GetComponent<Rigidbody2D>();
             bird_rigidbody2d.AddForce(dirToFly * launchMultiplier);
             bird_rigidbody2d.gravityScale = gravity;
