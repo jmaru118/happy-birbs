@@ -2,18 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
+    public Text enemyText;
     private int enemiesLeft;
     private Enemy[] enemies;
-    public Text enemyText;
-
+    private TMP_Text victoryText;
 
     // this function will be called by each enemy that dies
     public void updateEnemyCount()
     {
         enemiesLeft--;
+    }
+
+    public void ShowVictoryScreen()
+    {
+        // show victory screen
+        victoryText = FindObjectOfType<TMP_Text>();
+        victoryText.fontSize = 115;
+        // pause the game
+        Time.timeScale = 0;
     }
 
     // Start is called before the first frame update

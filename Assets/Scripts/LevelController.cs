@@ -10,6 +10,7 @@ public class LevelController : MonoBehaviour
     private int enemiesDefeated = 0;                           // if we defeated totalEnemies we can progress
     private int totalEnemies;                                  // lets us know how many enemies to defeat
     private static int levelIndex = 1;
+    private UIController uiController;                        // call our ui controller to show win screen
 
     // this function will be called by a bird as it is being destroyed
     public void ReadyUpNextBird()
@@ -38,7 +39,8 @@ public class LevelController : MonoBehaviour
         {
             levelIndex++;
             string nextLevel = "Level" + levelIndex;
-            SceneManager.LoadScene(nextLevel);
+            //SceneManager.LoadScene(nextLevel);
+            ShowWinScreen();
         }
     }
 
@@ -63,5 +65,11 @@ public class LevelController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void ShowWinScreen()
+    {
+        uiController = FindObjectOfType<UIController>();
+        uiController.ShowVictoryScreen();
     }
 }
