@@ -33,6 +33,13 @@ public class LevelController : MonoBehaviour
     public void countEnemyDefeated()
     {
         enemiesDefeated++;
+        // check if all enemies defeated and progress to next level
+        if (enemiesDefeated == totalEnemies)
+        {
+            levelIndex++;
+            string nextLevel = "Level" + levelIndex;
+            SceneManager.LoadScene(nextLevel);
+        }
     }
 
     private void OnEnable()
@@ -55,12 +62,6 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // check if all enemies defeated and progress to next level
-        if (enemiesDefeated == totalEnemies)
-        {
-            levelIndex++;
-            string nextLevel = "Level" + levelIndex;
-            SceneManager.LoadScene(nextLevel);
-        }
+
     }
 }
