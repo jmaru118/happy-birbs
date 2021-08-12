@@ -13,22 +13,24 @@ public class LevelController : MonoBehaviour
     private UIController uiController;                        // call our ui controller to show win screen
 
     // this function will be called by a bird as it is being destroyed
+    // and will only work if the player has not yet won
     public void ReadyUpNextBird()
     {
-        birdIndex++;
-
-        // reload scene if we've expended all our birds
-        if (birdIndex == birds.Length)
+        if (enemiesDefeated < totalEnemies)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            birdIndex++;
+
+            // reload scene if we've expended all our birds
+            if (birdIndex == birds.Length)
+            {
+                string currentSceneName = SceneManager.GetActiveScene().name;
+                SceneManager.LoadScene(currentSceneName);
+            }
+
+            // activate the next bird
+            if (birds[birdIndex] != null)
+                birds[birdIndex].ActivateBird();
         }
-
-        // activate the next bird
-        if (birds[birdIndex] != null)
-            birds[birdIndex].ActivateBird();
-
-
     }
 
     public void countEnemyDefeated()

@@ -22,8 +22,6 @@ public class UIController : MonoBehaviour
         // show victory screen
         victoryText = FindObjectOfType<TMP_Text>();
         victoryText.fontSize = 115;
-        // pause the game
-        Time.timeScale = 0;
     }
 
     // Start is called before the first frame update
